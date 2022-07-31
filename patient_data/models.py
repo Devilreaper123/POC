@@ -11,10 +11,10 @@ class PatientData(models.Model):
     dob = models.DateField()
     hospital_name = models.CharField(max_length=200)
     last_updated_by = models.ForeignKey(User,on_delete=models.CASCADE)
-    last_updated_time = models.DateTimeField(auto_now=True)
+    last_updated_time = models.DateTimeField(auto_now=True,blank=True)
     note_id = models.PositiveIntegerField()
-    note_date_time = models.DateTimeField(auto_now_add=True)
+    note_date_time = models.DateTimeField(auto_now_add=True,blank=True)
     prescription = models.TextField(max_length=600)
 
-    def __str__(self):
+    def __int__(self):
         return self.mrn
